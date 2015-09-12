@@ -1,0 +1,50 @@
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+ext {
+    libpacks = [
+        cloud : [
+            "org.springframework.cloud:spring-cloud-starter:1.0.3.RELEASE",
+            "org.springframework.cloud:spring-cloud-starter-ribbon:1.0.3.RELEASE",
+            "org.springframework.cloud:spring-cloud-starter-zuul:1.0.3.RELEASE"
+        ]
+    ]
+}
+
+dependencies {
+    compile 'org.apache.thrift:libthrift'
+
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+
+    compile 'ru.aatarasoff.thrift:api-gateway-core'
+
+    compile libpacks.cloud
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+        }
+    }
+}
+
+bintray {
+    user = System.properties['BINTRAY_USER']
+    key = System.properties['BINTRAY_KEY']
+    publications = ['mavenJava']
+    publish = true
+    pkg {
+        repo = 'maven'
+        name = 'spring-thrift-api-gateway'
+    }
+}

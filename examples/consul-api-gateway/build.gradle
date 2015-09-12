@@ -1,0 +1,22 @@
+ext {
+    consulVersion = '1.0.0.BUILD-SNAPSHOT'
+
+    libpacks = [
+        consul : [
+            "org.springframework.cloud:spring-cloud-consul-core:${consulVersion}",
+            "org.springframework.cloud:spring-cloud-consul-discovery:${consulVersion}",
+            "org.springframework.cloud:spring-cloud-consul-config:${consulVersion}",
+            "com.ecwid.consul:consul-api:+",
+            "joda-time:joda-time:+"
+        ]
+    ]
+}
+
+apply plugin: 'spring-boot'
+
+dependencies {
+    compile project(":spring-thrift-api-gateway")
+    compile project(":examples:test-protocol")
+
+    compile libpacks.consul
+}

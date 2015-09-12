@@ -1,0 +1,5 @@
+spring.cloud.consul.discovery.preferIpAddress: true
+---
+spring:
+  profiles: production
+spring.cloud.consul.host: consul-8500.service.consul

@@ -1,0 +1,4 @@
+include 'spring-thrift-api-gateway'
+include 'examples:consul-api-gateway'
+include 'examples:simple-thrift-api'
+include 'examples:test-protocol'
