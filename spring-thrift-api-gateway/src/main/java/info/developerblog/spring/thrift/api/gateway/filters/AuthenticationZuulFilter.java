@@ -53,6 +53,7 @@ public class AuthenticationZuulFilter extends ZuulFilter {
         } catch (TException e) {
             ctx.setSendZuulResponse(false);
             ctx.setResponseDataStream(new ByteArrayInputStream(new byte[]{}));
+
             try {
                 ctx.getResponse().getOutputStream().write(messageTransalator.processError(e));
             } catch (Exception e1) {
@@ -60,6 +61,9 @@ public class AuthenticationZuulFilter extends ZuulFilter {
                 ctx.setResponseStatusCode(HttpStatus.SC_INTERNAL_SERVER_ERROR);
             }
         } catch (Exception e) {
+            ctx.setSendZuulResponse(false);
+            ctx.setResponseDataStream(new ByteArrayInputStream(new byte[]{}));
+
             log.error("unexpected error", e);
             ctx.setResponseStatusCode(HttpStatus.SC_INTERNAL_SERVER_ERROR);
         }

@@ -1,5 +1,11 @@
-spring.cloud.consul.discovery.preferIpAddress: true
----
-spring:
-  profiles: production
-spring.cloud.consul.host: consul-8500.service.consul
+server.port: 8080
+
+zuul:
+  routes:
+    greetings:
+      path: /greetings/**
+      serviceId: greetings
+
+greetings:
+  ribbon:
+    listOfServers: localhost:${server.port}

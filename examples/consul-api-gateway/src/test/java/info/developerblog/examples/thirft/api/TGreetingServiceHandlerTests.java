@@ -26,7 +26,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@IntegrationTest("server.port:0")
+@IntegrationTest
 public class TGreetingServiceHandlerTests {
 
     @Value("${local.server.port}")
