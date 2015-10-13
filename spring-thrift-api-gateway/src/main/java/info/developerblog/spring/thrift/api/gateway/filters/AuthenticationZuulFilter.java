@@ -36,7 +36,12 @@ public class AuthenticationZuulFilter extends ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        return true;
+        RequestContext ctx = RequestContext.getCurrentContext();
+        String contentType = ctx.getRequest().getHeader("Content-Type");
+
+        return null != contentType
+                && "application/x-thrift".equals(contentType);
+
     }
 
     @Override
