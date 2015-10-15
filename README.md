@@ -2,8 +2,7 @@
 
 ## What is it
 
-Gateway for Apache Thrift requests processing that is built on Spring Cloud stack
-
+Gateway for Apache Thrift requests processing that is built on Spring Cloud stack. Project depends on core functionality that is described in https://github.com/aatarasoff/thrift-api-gateway-core
 ## How connect project
 
 Its very simple:
