@@ -24,6 +24,9 @@ public class AuthenticationZuulFilter extends ZuulFilter {
     @Autowired
     TProtocolFactory protocolFactory;
 
+    @Autowired
+    ShouldAuthenticationFilterResolver shouldAuthenticationFilterResolver;
+
     @Override
     public String filterType() {
         return "pre";
@@ -36,12 +39,7 @@ public class AuthenticationZuulFilter extends ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        RequestContext ctx = RequestContext.getCurrentContext();
-        String contentType = ctx.getRequest().getHeader("Content-Type");
-
-        return null != contentType
-                && "application/x-thrift".equals(contentType);
-
+        return shouldAuthenticationFilterResolver.resolve(RequestContext.getCurrentContext());
     }
 
     @Override
