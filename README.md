@@ -1,5 +1,7 @@
 # Thrift API Gateway for Spring
 
+[![Join the chat at https://gitter.im/aatarasoff/spring-thrift-api-gateway](https://badges.gitter.im/aatarasoff/spring-thrift-api-gateway.svg)](https://gitter.im/aatarasoff/spring-thrift-api-gateway?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## What is it
 
 Gateway for Apache Thrift requests processing that is built on Spring Cloud stack. Project depends on core functionality that is described in https://github.com/aatarasoff/thrift-api-gateway-core
