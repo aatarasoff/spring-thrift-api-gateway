@@ -25,9 +25,6 @@ allprojects {
 
     repositories {
         jcenter()
-        maven { url 'https://repo.spring.io/snapshot' }
-        maven { url "http://nexus.ecwid.com/content/groups/public" }
-        maven { url  "http://dl.bintray.com/aatarasoff/maven" }
     }
     
     apply plugin: 'idea'
