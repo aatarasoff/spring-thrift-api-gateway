@@ -3,11 +3,11 @@ apply plugin: 'com.jfrog.bintray'
 
 ext {
     libpacks = [
-        cloud : [
-            "org.springframework.cloud:spring-cloud-starter:1.0.3.RELEASE",
-            "org.springframework.cloud:spring-cloud-starter-ribbon:1.0.3.RELEASE",
-            "org.springframework.cloud:spring-cloud-starter-zuul:1.0.3.RELEASE"
-        ]
+            cloud: [
+                    "org.springframework.cloud:spring-cloud-starter",
+                    "org.springframework.cloud:spring-cloud-starter-ribbon",
+                    "org.springframework.cloud:spring-cloud-starter-zuul"
+            ]
     ]
 }
 
@@ -37,6 +37,7 @@ publishing {
         }
     }
 }
+
 
 bintray {
     user = System.properties['BINTRAY_USER']

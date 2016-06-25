@@ -52,7 +52,7 @@ public class AuthenticationZuulFilter extends ZuulFilter {
         try {
             byte[] processed = messageTransalator.process(request.getContentData());
             ctx.set("requestEntity", new ByteArrayInputStream(processed));
-            ctx.setOriginContentLength(processed.length);
+            ctx.setOriginContentLength(Long.valueOf(processed.length));
         } catch (TException e) {
             ctx.setSendZuulResponse(false);
             ctx.setResponseDataStream(new ByteArrayInputStream(new byte[]{}));
