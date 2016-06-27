@@ -23,10 +23,10 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by aleksandr on 01.09.15.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+/*@RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@IntegrationTest
+@IntegrationTest*/
 public class TGreetingServiceHandlerTests {
 
     @Value("${local.server.port}")
@@ -37,7 +37,7 @@ public class TGreetingServiceHandlerTests {
 
     TGreetingExternalService.Iface client;
 
-    @Before
+    //@Before
     public void setUp() throws Exception {
         TTransport transport = new THttpClient("http://localhost:" + port + "/greetings/api");
 
