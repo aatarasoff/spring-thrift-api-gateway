@@ -4,5 +4,5 @@ dependencies {
     compile project(":spring-thrift-api-gateway")
     compile project(":examples:test-protocol")
 
-    compile 'info.developerblog.spring.thrift:spring-thrift-starter:0.1.4'
+    compile 'info.developerblog.spring.thrift:spring-thrift-starter'
 }
