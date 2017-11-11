@@ -50,7 +50,7 @@ allprojects {
             dependency 'org.projectlombok:lombok:1.16.8'
             dependency 'ru.aatarasoff.thrift:api-gateway-core:0.2.1'
             dependency 'org.apache.thrift:libthrift:0.9.3'
-            dependency 'info.developerblog.spring.thrift:spring-thrift-starter:1.4.0.RELEASE'
+            dependency 'info.developerblog.spring.thrift:spring-thrift-starter:1.5.0'
         }
     }
 
